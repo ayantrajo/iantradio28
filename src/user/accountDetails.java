@@ -64,7 +64,6 @@ public class accountDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
-        setPreferredSize(new java.awt.Dimension(617, 488));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -75,8 +74,7 @@ public class accountDetails extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("BACK");
+        jLabel3.setText("LOG OUT");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -112,8 +110,7 @@ public class accountDetails extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(iddisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +135,7 @@ public class accountDetails extends javax.swing.JFrame {
                             .addComponent(email)
                             .addComponent(username)
                             .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 142, Short.MAX_VALUE))
+                .addGap(0, 382, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +169,7 @@ public class accountDetails extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(220, 0, 400, 490);
+        jPanel1.setBounds(210, 0, 640, 490);
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 255));
 
@@ -224,9 +221,9 @@ public class accountDetails extends javax.swing.JFrame {
                 .addComponent(acc_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(acc_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel3);
@@ -237,8 +234,9 @@ public class accountDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-      userForm sfr = new userForm();
-       sfr.setVisible(true);
+      loginForm lfr = new loginForm();
+      JOptionPane.showMessageDialog(null, "Logged Out!");
+       lfr.setVisible(true);
        this.dispose(); 
     }//GEN-LAST:event_jLabel3MouseClicked
 
@@ -246,8 +244,6 @@ public class accountDetails extends javax.swing.JFrame {
      Session sess = Session.getInstance();
     
      iddisplay.setText("USER ID: "+sess.getId());
-     acc_fname.setText(""+sess.getFname());
-     acc_lname.setText(""+sess.getLname());
      fname.setText(""+sess.getFname());
      lname.setText(""+sess.getLname());
      email.setText(""+sess.getEmail());
