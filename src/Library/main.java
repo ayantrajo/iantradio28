@@ -94,7 +94,7 @@ public class main extends javax.swing.JFrame {
         jButton6.setText("Issue Book ");
 
         jButton7.setBackground(new java.awt.Color(204, 204, 255));
-        jButton7.setText("Return Book");
+        jButton7.setText("Reports");
 
         jButton8.setText("BACK");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
